@@ -43,6 +43,11 @@ app.get('/about',(req,res)=>{
   });
 });
 
+app.get('/project',(req,res)=>{
+  res.render('porject.hbs',{
+    pageTitle:'Project Name'
+  });
+});
 
 //
 //  app.get('/',(req,res)=>{
