@@ -4,6 +4,8 @@ var app = express();
 var hbs = require('hbs');
 var fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 hbs.registerPartials(__dirname + '/views/partials');
 
 
@@ -16,9 +18,9 @@ hbs.registerHelper('screamIt',(text)=>{
   return text.toUpperCase();
 });
 
-app.use((req,res,next)=>{
-  res.render('maintanance.hbs')
-})
+// app.use((req,res,next)=>{
+//   res.render('maintanance.hbs')
+// })
 
 app.use(express.static(__dirname + '/public'));
 app.use((req,res,next)=>{
@@ -65,12 +67,12 @@ app.get('/about',(req,res)=>{
 //   res.send('<h2>About page !</h2>');
 // });
 
-// app.get('/bad',(req,res)=>{
+// app.get('/bad',(req,res)=> {
 //   res.send({
 //     error:'Error Handling request'
 //   });
 // });
 
- app.listen(3000,()=>{
-   console.log("Server is up on 3000 port");
+ app.listen(port,()=>{
+   console.log(`Server is up on port ${port}`);
  });
