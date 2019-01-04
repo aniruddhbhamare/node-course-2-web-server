@@ -49,6 +49,10 @@ app.get('/project',(req,res)=>{
   });
 });
 
+app.get('/privacy_policy',(req,res)=>{
+  res.render('privacy_policy.hbs',{
+  });
+});
 //
 //  app.get('/',(req,res)=>{
 //    //res.send("Hello Express !");
